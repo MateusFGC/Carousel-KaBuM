@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://blog.kabum.com.br/wp-content/themes/kabum-v2.0/assets/lib/Fontawesome/css/all.min.css?ver=1.0"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.0/dist/css/uikit.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            --tw-text-opacity: 1;
+            color: rgb(66 70 77 / var(--tw-text-opacity, 1));
+            font-size: 1.50rem;
+            line-height: 1.75rem;
+        }
+
+        i {
+            color: #FD6519;
+            width: 24px;
+        }
+
+        .kabum-review {
+            width: 100%;
+            background: transparent;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            border-color: transparent;
+        }
+
+        .kabum-review>svg[data-state="open"] {
+            transform: rotate(180deg);
+            transition: 0.5s ease-in-out;
+
+        }
+
+        .kabum-review>svg[data-state="close"] {
+            transition: 0.5s ease-in-out;
+            transform: rotate(0deg);
+        }
+
+        .kabum-review>svg {
+            width: 1rem;
+            height: 0.5rem;
+
+        }
+
+        .kabum-review>svg {
+            width: 1.5rem;
+            height: 0.875rem;
+        }
+
+        .kabum-cr-card {
+            width: 550px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        #kabum-mainVideo {
+            max-height: 500px;
+            overflow: hidden;
+            transition: max-height 0.9s ease;
+        }
+
+        #kabum-mainVideo.kabum-hidden {
+            max-height: 0;
+        }
+
+        .kabum-divider {
+            --tw-bg-opacity: 1;
+            background-color: rgb(222 224 228/var(--tw-bg-opacity, 1));
+            width: 100%;
+            height: 3px;
+            margin-top: 2rem;
+        }
+
+        .uk-active>li {
+            background-color: #ff6500;
+        }
+
+        .uk-icon {
+            top: 50%;
+            width: 54px;
+            height: 54px;
+            margin: 0 28px;
+            background-color: #E35214;
+            border-radius: 50%;
+
+        }
+
+        .uk-light .uk-dotnav>*>* {
+            background-color: #E35214;
+        }
+
+        .uk-light .uk-dotnav>.uk-active>* {
+            background-color: #000;
+        }
+
+        .kabum-thumbnail-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .kabum-thumbnail-wrapper img {
+            display: block;
+
+            width: 100%;
+        }
+
+        .kabum-text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            color: white;
+            box-sizing: border-box;
+            background: linear-gradient(to top, rgba(0, 0, 0), rgba(0, 0, 0, 0));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+
+        .kabum-video-title,
+        .kabum-video-subtitle {
+            margin: 0;
+            /* Remove margens padrão do h3 e p */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            /* Sombra para melhorar a leitura */
+        }
+
+        .kabum-video-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .kabum-video-subtitle {
+            font-size: 0.9rem;
+            margin-top: 4px;
+            /* Pequeno espaço entre título e subtítulo */
+        }
+
+        .kabum-play-icon-overlay {
+            position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    padding: 15px;
+    color: white;
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0, 0, 0), rgba(0, 0, 0, 0));
+    border-radius: 20px;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: flex-end;
+        }
+
+        /* Efeito ao passar o mouse: o ícone fica mais visível */
+        .kabum-thumbnail-wrapper:hover .kabum-play-icon-overlay {
+            opacity: 1;
+        }
+
+        /* Estilo para o próprio ícone (o "i" do Font Awesome) */
+        .kabum-play-icon-overlay i {
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+            /* Sombra para destacar o ícone */
+        }
+
+
+        /* --- Restante do seu CSS --- */
+        .kabum-hidden {
+            display: none;
+        }
+
+        .uk-panel .kabum-video-iframe {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section>
+        <button type="button" class="kabum-review p-2" data-state="open">
+            <span><i class="fa-solid fa-magnifying-glass"></i> VÍDEOS, UNBOXING, REVIEWS & MAIS</span>
+            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="https://www.w3.org/2000/svg"
+                id="kabum-arrow-review" data-state="close" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.0459 1.54599L10.955 0.455078L6.0459 5.36417L1.13681 0.455078L0.0458984 1.54599L6.0459 7.54599L12.0459 1.54599Z"
+                    fill="#ff6500" aria-hidden="true"></path>
+            </svg>
+        </button>
+
+
+        <div id="kabum-mainVideo" class="uk-position-relative uk-visible-toggle uk-light uk-margin-top" tabindex="-1"
+            uk-slider="center: true">
+
+            <div class="uk-slider-items uk-grid">
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+
+                        <div class="kabum-thumbnail-wrapper">
+
+                            <img class="kabum-video-thumbnail kabum-cr-card" src="Review.jpg"
+                                alt="Thumbnail do review do Produto X">
+                            <div class="kabum-play-icon-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="kabum-text-overlay">
+                                <h3 class="kabum-video-title">Título Principal do Vídeo</h3>
+                                <p class="kabum-video-subtitle">Aqui vai o subtítulo ou descrição.</p>
+                            </div>
+
+                        </div>
+
+                        <iframe class="kabum-video-iframe kabum-cr-card"
+                            src="https://www.youtube.com/embed/6ISSHyTG_p0?si=F__3yCd0DzzowPUf"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+                        <div class="kabum-thumbnail-wrapper">
+
+                            <img class="kabum-video-thumbnail kabum-cr-card" src="Cenas.webp"
+                                alt="Thumbnail do review do Produto X">
+                            <div class="kabum-play-icon-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="kabum-text-overlay">
+                                <h3 class="kabum-video-title">Título Principal do Vídeo</h3>
+                                <p class="kabum-video-subtitle">Aqui vai o subtítulo ou descrição.</p>
+                            </div>
+
+                        </div>
+                        <iframe class="kabum-video-iframe kabum-cr-card"
+                            src="https://www.youtube.com/embed/8hMZk1WlLWw?si=zNdU4Es937Rzuaj0"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+                        <div class="kabum-thumbnail-wrapper">
+
+                            <img class="kabum-video-thumbnail kabum-cr-card" src="Como-Parear.webp"
+                                alt="Thumbnail do review do Produto X">
+                            <div class="kabum-play-icon-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="kabum-text-overlay">
+                                <h3 class="kabum-video-title">Título Principal do Vídeo</h3>
+                                <p class="kabum-video-subtitle">Aqui vai o subtítulo ou descrição.</p>
+                            </div>
+
+                        </div>
+                        <iframe class="kabum-video-iframe kabum-cr-card"
+                            src="https://www.youtube.com/embed/sM2LojXDqCI?si=vtx5xNJoevyCv_Nd"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+                        <div class="kabum-thumbnail-wrapper">
+
+                            <img class="kabum-video-thumbnail kabum-cr-card" src="Parear-Alexa.webp"
+                                alt="Thumbnail do review do Produto X">
+                            <div class="kabum-play-icon-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="kabum-text-overlay">
+                                <h3 class="kabum-video-title">Título Principal do Vídeo</h3>
+                                <p class="kabum-video-subtitle">Aqui vai o subtítulo ou descrição.</p>
+                            </div>
+
+                        </div>
+                        <iframe class="kabum-video-iframe kabum-cr-card"
+                            src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+
+            <a class="uk-position-center-left uk-position-small  uk-flex uk-flex-center " href uk-slidenav-previous
+                uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small  uk-flex uk-flex-center" href uk-slidenav-next
+                uk-slider-item="next"></a>
+
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin uk-dark"></ul>
+
+        </div>
+
+        </section>
+
+
+</body>
+
+<script>
+    var arrowReview = document.querySelector('kabum-review > svg')
+    var mainVideo = document.getElementById('kabum-mainVideo')
+
+    function selectHidden() {
+
+        mainVideo.classList.add('kabum-hidden')
+
+        if (arrowReview.dataset.state == "close") {
+            arrowReview.setAttribute('data-state', 'open')
+            /* mainVideo.hidden = tru */
+            mainVideo.classList.add('kabum-hidden')
+
+        } else if (arrowReview.dataset.state == "open") {
+            arrowReview.setAttribute('data-state', 'close')
+            /* mainVideo.hidden = false */
+
+            mainVideo.classList.remove('kabum-hidden')
+        }
+
+
+    }
+
+        document.querySelector('button').addEventListener('click', selectHidden)
+
+
+    function showVideo(event) {
+        var clickedImage = event.currentTarget;
+
+        var wrapper = clickedImage.closest('.kabum-thumbnail-wrapper');
+
+        var panel = clickedImage.closest('.uk-panel');
+
+        var iframe = panel.querySelector('.kabum-video-iframe');
+
+        wrapper.classList.add('kabum-hidden');
+
+        iframe.style.display = 'block';
+    }
+
+    var thumbnails = document.querySelectorAll('.uk-panel .kabum-video-thumbnail');
+    thumbnails.forEach(function (thumb) {
+        thumb.addEventListener('click', showVideo);
+    });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.0/dist/js/uikit.min.js"></script>
+
+</html>

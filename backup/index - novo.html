@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://blog.kabum.com.br/wp-content/themes/kabum-v2.0/assets/lib/Fontawesome/css/all.min.css?ver=1.0"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.0/dist/css/uikit.min.css" />
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container-video {
+            max-width: 100%;
+            margin: auto !important;
+        }
+
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            --tw-text-opacity: 1;
+            color: rgb(66 70 77 / var(--tw-text-opacity, 1));
+            font-size: 1.50rem;
+            line-height: 1.75rem;
+        }
+
+        i {
+            color: #FD6519;
+            width: 24px;
+        }
+
+        .review {
+            width: 100%;
+            background: transparent;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            border-color: transparent;
+        }
+
+        .review>svg[data-state="open"] {
+            transform: rotate(180deg);
+            transition: 0.5s ease-in-out;
+
+        }
+
+        .review>svg[data-state="close"] {
+            transition: 0.5s ease-in-out;
+            transform: rotate(0deg);
+        }
+
+        .review>svg {
+            width: 1rem;
+            height: 0.5rem;
+
+        }
+
+        .review>svg {
+            width: 1.5rem;
+            height: 0.875rem;
+        }
+
+        iframe {
+            width: 550px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+
+        #mainVideo {
+            max-height: 500px;
+            overflow: hidden;
+            transition: max-height 0.9s ease;
+        }
+
+        #mainVideo.hidden {
+            max-height: 0;
+        }
+
+        .divider {
+            --tw-bg-opacity: 1;
+            background-color: rgb(222 224 228/var(--tw-bg-opacity, 1));
+            width: 100%;
+            height: 3px;
+            margin-top: 2rem;
+        }
+ 
+       /*  .carousel-indicators {
+            position: relative;
+        }
+  */
+        .uk-active > li{
+            background-color: #ff6500;
+        }
+/* 
+          @media screen and (min-width:576px) {
+            .carousel-inner {
+                display: flex;
+            }
+
+            .carousel-item {
+                display: block;
+                flex: 0 0 calc(100%/3)
+            }
+        }  */
+        /*  */
+        .uk-icon {
+            top: 50%;
+            width: 6vh;
+            height: 6vh;
+            margin: 0 28px;
+            background-color: #E35214;
+            border-radius: 50%;
+
+        }
+
+        .uk-light .uk-dotnav>*>*{
+             background-color: #E35214;
+        }
+        .uk-light .uk-dotnav>.uk-active>*{
+            background-color: #000;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section>
+               <button type="button" class="review p-2" data-state="open">
+            <span><i class="fa-solid fa-magnifying-glass"></i> REVIEW</span>
+            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="https://www.w3.org/2000/svg"
+                id="arrow-review" data-state="close" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.0459 1.54599L10.955 0.455078L6.0459 5.36417L1.13681 0.455078L0.0458984 1.54599L6.0459 7.54599L12.0459 1.54599Z"
+                    fill="#ff6500" aria-hidden="true"></path>
+            </svg>
+        </button> 
+        <!-- 
+        <div id="mainVideo" class=" mt-4 uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+            uk-slider="center: true">
+            <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m">
+
+                <div class="">
+
+
+                    <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                        title="YouTube video player" allowfullscreen loading="lazy">
+                    </iframe>
+
+
+                </div>
+                <div class="">
+
+
+                    <iframe class="" src="https://www.youtube.com/embed/sM2LojXDqCI?si=vtx5xNJoevyCv_Nd"
+                        title="YouTube video player" allowfullscreen loading="lazy">
+                    </iframe>
+
+
+                </div>
+                <div class="">
+
+
+                    <iframe class="" src="https://www.youtube.com/embed/8hMZk1WlLWw?si=zNdU4Es937Rzuaj0"
+                        title="YouTube video player" allowfullscreen loading="lazy">
+                    </iframe>
+
+
+                </div>
+                <div class="">
+
+                    <iframe class="" src="https://www.youtube.com/embed/6ISSHyTG_p0?si=F__3yCd0DzzowPUf"
+                        title="YouTube video player" allowfullscreen loading="lazy">
+                    </iframe>
+
+                </div>
+            </div>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
+             <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
+
+        </div>  -->
+
+        <!--     <div uk-slider>
+
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+                <div class="uk-slider-container uk-light">
+                    <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+                        <div>
+                            <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                                title="YouTube video player" allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div>
+                            <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                                title="YouTube video player" allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div>
+                            <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                                title="YouTube video player" allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div>
+                            <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                                title="YouTube video player" allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous
+                    uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next
+                    uk-slider-item="next"></a>
+
+            </div>
+
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+
+        </div> -->
+
+        <div id="mainVideo" class="uk-position-relative uk-visible-toggle uk-light uk-margin-top" tabindex="-1"
+            uk-slider="center: true">
+
+            <div class="uk-slider-items uk-grid">
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+                        <iframe class="" src="https://www.youtube.com/embed/6ISSHyTG_p0?si=F__3yCd0DzzowPUf"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+                        <iframe class="" src="https://www.youtube.com/embed/8hMZk1WlLWw?si=zNdU4Es937Rzuaj0"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+
+                        <iframe class="" src="https://www.youtube.com/embed/sM2LojXDqCI?si=vtx5xNJoevyCv_Nd"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="uk-width-xlarge">
+                    <div class="uk-panel">
+
+                        <iframe class="" src="https://www.youtube.com/embed/kHK_DAOuMaI?si=vzNjiWarZMrd8LAC"
+                            title="YouTube video player" allowfullscreen loading="lazy">
+                        </iframe>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-flex uk-flex-center " href uk-slidenav-previous
+                uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-flex uk-flex-center" href uk-slidenav-next
+                uk-slider-item="next"></a>
+
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin uk-dark"></ul>
+
+        </div>
+
+        <div class="divider"></div>
+    </section>
+
+
+</body>
+<script>
+    var arrowReview = document.querySelector('svg')
+    var mainVideo = document.getElementById('mainVideo')
+
+    function selectHidden() {
+
+        mainVideo.classList.add('hidden')
+
+        if (arrowReview.dataset.state == "close") {
+            arrowReview.setAttribute('data-state', 'open')
+            /* mainVideo.hidden = tru */
+            mainVideo.classList.add('hidden')
+
+        } else if (arrowReview.dataset.state == "open") {
+            arrowReview.setAttribute('data-state', 'close')
+            /* mainVideo.hidden = false */
+
+            mainVideo.classList.remove('hidden')
+        }
+
+
+    }
+
+    document.querySelector('button').addEventListener('click', selectHidden)
+</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.0/dist/js/uikit.min.js"></script>
+
+</html>
