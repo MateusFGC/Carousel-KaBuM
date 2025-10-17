@@ -1,184 +1,183 @@
+* {
+    box-sizing: border-box;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+.kabum-review>span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    --tw-text-opacity: 1;
+    color: rgb(66 70 77 / var(--tw-text-opacity, 1));
+    font-size: 1.50rem;
+    line-height: 1.75rem;
+}
 
-        .kabum-review > span {
-            font-family: "Poppins", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            --tw-text-opacity: 1;
-            color: rgb(66 70 77 / var(--tw-text-opacity, 1));
-            font-size: 1.50rem;
-            line-height: 1.75rem;
-        }
+i {
+    color: #FD6519;
 
-        i {
-            color: #FD6519;
-            width: 24px;
-        }
+}
 
-        .kabum-review {
-            width: 100%;
-            background: transparent;
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            align-items: center;
-            border-color: transparent;
-        }
+.kabum-review {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    border-color: transparent;
+}
 
-        .kabum-review>svg[data-state="open"] {
-            transform: rotate(180deg);
-            transition: 0.5s ease-in-out;
+.kabum-review>svg[data-state="open"] {
+    transform: rotate(180deg);
+    transition: 0.5s ease-in-out;
 
-        }
+}
 
-        .kabum-review>svg[data-state="close"] {
-            transition: 0.5s ease-in-out;
-            transform: rotate(0deg);
-        }
+.kabum-review>svg[data-state="close"] {
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
+}
 
-        .kabum-review>svg {
-            width: 1rem;
-            height: 0.5rem;
+.kabum-review>svg {
+    width: 1rem;
+    height: 0.5rem;
 
-        }
+}
 
-        .kabum-review>svg {
-            width: 1.5rem;
-            height: 0.875rem;
-        }
+.kabum-review>svg {
+    width: 1.5rem;
+    height: 0.875rem;
+}
 
-        .cr-card {
-            width: 550px;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            display: block;
-            margin: 0 auto;
-            border-radius: 20px;
-            object-fit: cover;
-        }
+.cr-card {
+    width: 550px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
 
-        #mainVideo {
-            max-height: 500px;
-            overflow: hidden;
-            transition: max-height 0.9s ease;
-        }
+#mainVideo {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.9s ease;
+}
 
-        #mainVideo.hidden {
-            max-height: 0;
-        }
+#mainVideo.hidden {
+    max-height: 0;
+}
 
-        .divider {
-            --tw-bg-opacity: 1;
-            background-color: rgb(222 224 228/var(--tw-bg-opacity, 1));
-            width: 100%;
-            height: 3px;
-            margin-top: 2rem;
-        }
+.divider {
+    --tw-bg-opacity: 1;
+    background-color: rgb(222 224 228/var(--tw-bg-opacity, 1));
+    width: 100%;
+    height: 3px;
+    margin-top: 2rem;
+}
 
-        .uk-active>li {
-            background-color: #ff6500;
-        }
+.uk-active>li {
+    background-color: #ff6500;
+}
 
-        .uk-icon {
-            top: 50%;
-            width: 54px;
-            height: 54px;
-            margin: 0 28px;
-            background-color: #E35214;
-            border-radius: 50%;
+.uk-icon {
+    top: 50%;
+    width: 54px;
+    height: 54px;
+    margin: 0 28px;
+    background-color: #E35214;
+    border-radius: 50%;
 
-        }
+}
 
-        .uk-light .uk-dotnav>*>* {
-            background-color: #E35214;
-        }
+.uk-light .uk-dotnav>*>* {
+    background-color: #E35214;
+}
 
-        .uk-light .uk-dotnav>.uk-active>* {
-            background-color: #000;
-        }
+.uk-light .uk-dotnav>.uk-active>* {
+    background-color: #000;
+}
 
-        .kabum-thumbnail-wrapper {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
+.kabum-thumbnail-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
 
-        .kabum-thumbnail-wrapper img {
-            display: block;
+.kabum-thumbnail-wrapper img {
+    display: block;
 
-            width: 100%;
-        }
+    width: 100%;
+}
 
-        .kabum-text-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 15px;
-            color: white;
-            box-sizing: border-box;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 1) 85%);
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
+.kabum-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: white;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 1) 85%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
-        /* 3. Estilo do Título e Subtítulo */
-        .kabum-video-title,
-        .kabum-video-subtitle {
-            margin: 0;
-            /* Remove margens padrão do h3 e p */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-            /* Sombra para melhorar a leitura */
-        }
+/* 3. Estilo do Título e Subtítulo */
+.kabum-video-title,
+.kabum-video-subtitle {
+    margin: 0;
+    /* Remove margens padrão do h3 e p */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* Sombra para melhorar a leitura */
+}
 
-        .kabum-video-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+.kabum-video-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
-        .kabum-video-subtitle {
-            font-size: 0.9rem;
-            margin-top: 4px;
-            /* Pequeno espaço entre título e subtítulo */
-        }
+.kabum-video-subtitle {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    /* Pequeno espaço entre título e subtítulo */
+}
 
-        .kabum-play-icon-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
+.kabum-play-icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        /* Efeito ao passar o mouse: o ícone fica mais visível */
-        .kabum-thumbnail-wrapper:hover .kabum-play-icon-overlay {
-            opacity: 1;
-        }
+/* Efeito ao passar o mouse: o ícone fica mais visível */
+.kabum-thumbnail-wrapper:hover .kabum-play-icon-overlay {
+    opacity: 1;
+}
 
-        /* Estilo para o próprio ícone (o "i" do Font Awesome) */
-        .kabum-play-icon-overlay i {
-            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-            /* Sombra para destacar o ícone */
-        }
+/* Estilo para o próprio ícone (o "i" do Font Awesome) */
+.kabum-play-icon-overlay i {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    /* Sombra para destacar o ícone */
+}
 
 
-     
-        .kabum-hidden {
-            display: none;
-        }
 
-        .uk-panel iframe {
-            display: none;
-        }
+.kabum-hidden {
+    display: none;
+}
+
+.uk-panel iframe {
+    display: none;
+}
