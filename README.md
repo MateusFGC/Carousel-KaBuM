@@ -1,4 +1,4 @@
-# Carousel de Reviews KaBuM! (UIkit, JS Puro & Performance Otimizada)
+# Carousel de Reviews KaBuM! (UIkit, JS & Performance Otimizada)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -6,7 +6,7 @@
 ![UIkit](https://img.shields.io/badge/UIkit-2396F3?style=for-the-badge&logo=uikit&logoColor=white)
 ![Performance](https://img.shields.io/badge/Performance-Otimizado-brightgreen?style=for-the-badge&logo=googlechrome&logoColor=white)
 
-Componente de carrossel de reviews em vídeo, projetado para integração em PDPs (Páginas de Produto) do KaBuM!. O projeto demonstra domínio de JavaScript "vanilla", otimização de performance em e-commerce e gerenciamento de estado da UI.
+Componente de carrossel de reviews em vídeo, projetado para integração em PDPs (Páginas de Produto) do KaBuM!. O projeto demonstra domínio de JavaScript, otimização de performance em e-commerce e gerenciamento de estado da UI.
 
 O foco principal é a **experiência do usuário (UX)** e a **performance de carregamento (Core Web Vitals)**, implementados através de um "efeito gaveta" (accordion) e do padrão de design "Video Facade" (Fachada de Vídeo).
 
