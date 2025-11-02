@@ -51,6 +51,15 @@ Para melhorar a UX e permitir que o usuário organize a página, o componente po
 
 ---
 
+## 👨‍💻 Autor
+Desenvolvido por Mateus F.G.C.
+
+LinkedIn: <a href="https://www.linkedin.com/in/mateus-fgc/" target="_blank">https://www.linkedin.com/in/mateus-fgc/</a>
+
+GitHub: <a href="https://github.com/MateusFGC" target="_blank">https://github.com/MateusFGC</a>
+
+---
+
 ## 📂 Como Executar o Projeto Localmente
 
 Nenhuma instalação é necessária.
