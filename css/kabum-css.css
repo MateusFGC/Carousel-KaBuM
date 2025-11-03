@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+body{
+    max-width: 1440px;
+    margin: auto;
+}
+
 .kabum-review>span {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
