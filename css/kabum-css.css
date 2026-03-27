@@ -80,8 +80,8 @@ stroke: rgb(255 255 255);
 }
 
 .uk-grid>*{
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .kabum-review>svg {
@@ -121,6 +121,8 @@ stroke: rgb(255 255 255);
 }
 
 #mainVideo {
+    max-width: 971px;
+    margin: auto;
     max-height: 100%;
     overflow: hidden;
     transition: max-height 0.9s ease;
@@ -148,13 +150,13 @@ stroke: rgb(255 255 255);
 }
 
 .uk-icon {
-    
+    top: 46.5%;
     width: 5rem;
     height: 3rem;
     margin: 0 18px;
     background-color: #E35214;
     border-radius: 100rem;
-    position: relative !important;
+    position: absolute;
     padding: 0;
 
 }
@@ -208,13 +210,9 @@ stroke: rgb(255 255 255);
     position: relative;
     display: inline-block;
     cursor: pointer;
-    margin: 1rem;
+    margin: 0 1rem 0 1rem;
 }
 
-/* .kabum-thumbnail-wrapper img {
-    display: block;
-    width: 100%;
-} */
 .uk-slider-items{
     display: flex;
     justify-content: center;
@@ -229,8 +227,8 @@ stroke: rgb(255 255 255);
     padding: 15px;
     color: white;
     box-sizing: border-box;
-/*     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 1) 85%);
- */    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 1) 85%);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

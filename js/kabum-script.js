@@ -24,10 +24,11 @@ document.querySelector('#kabum-button > button').addEventListener('click', selec
 // --- 1. CONFIGURAÇÃO: Lista de IDs dos vídeos ---
 // Adicione quantos quiser aqui, separados por vírgula
 const videoList = [
-    "JVkbxVKXxNM",
-    "8ymguhNWWjc",
-    "FEvasncIzoM",
-    "HFHa74TKp64"
+    "hqMZ4x4NNx0",
+    "kd7Sl09apfg",
+    "5fENP-yhwhY",
+    "h6D5AgrpMGo",
+    "Ws2iIZ5WPyw"
 ];
 
 // Seleciona o container ONDE os vídeos serão inseridos (certifique-se que esse elemento existe no HTML)
@@ -35,9 +36,32 @@ const mainContainer = document.querySelector('.uk-grid');
 
 // Limpa o container antes de começar (opcional, evita duplicação se rodar 2x)
 if (mainContainer) mainContainer.innerHTML = '';
+var videoTitle = "";
 
 // --- 2. LOOP PRINCIPAL ---
-videoList.forEach((videoId) => {
+videoList.forEach(async (videoId) => {
+
+    const oEmbedUrl = `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`;
+    async function getTitleWithoutAPI() {
+        try {
+            const response = await fetch(oEmbedUrl);
+            const data = await response.json();
+
+            // Se der certo, injeta o título no HTML
+            if (data.title) {
+                return data.title;
+
+            } else {
+                return "Título não disponível";
+            }
+        } catch (error) {
+            console.error("Erro:", error);
+            return "Erro ao carregar título";
+        }
+    }
+
+    const videoTitle = await getTitleWithoutAPI();
+    console.log(`Título recebido para o ID ${videoId}:`, videoTitle);
 
     // Cria o wrapper para ESTE vídeo específico
     const wrapper = document.createElement('div');
@@ -53,6 +77,18 @@ videoList.forEach((videoId) => {
             <div class="kabum-play-icon-overlay">
                 <i class="fab fa-youtube"></i>
             </div>
+             <div class="kabum-text-overlay">
+
+                <!-- Substitua o titulo da Thumbnail dentro da tag <h3> -->
+                <h3 class="kabum-video-title">
+                    ${videoTitle}
+                </h3>
+
+                <!-- coloque o Sub-titulo da Thumbnail  dentro da tag <p> -->
+                <p class="kabum-video-subtitle">
+                    <!-- Insira aqui -->
+                </p>
+            </div
             
     `;
 
@@ -102,7 +138,7 @@ function playVideo(wrapperElement, videoId) {
         }
     })
 
-    document.querySelectorAll('.prevNext > a').forEach(item => {        
+    document.querySelectorAll('.prevNext > a').forEach(item => {
         item.addEventListener('click', () => {
             const blockVideo = document.querySelector('.validacao-iframe')
             blockVideo.innerHTML = blockVideo.dataset.originalHtml; // Restaura a imagem
